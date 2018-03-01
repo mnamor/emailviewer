@@ -1,0 +1,33 @@
+
+	<div align="center">
+	 
+	  <h1>Liste de tous les mails</h1><br>
+
+
+	   <div >
+		<table >
+	  	<tr>
+	  	  <th  style="text-align: center"><h2>Liste</h2> </th> 
+	  	  <th  style="text-align: center"><h2>Contenu</h2> </th>
+	  	</tr>
+
+	    <% @emails.each do |email| %>
+	  	<tr id="email<%=email.id%>">
+		  <td class="liste" id= "email_object<%=email.id%>" style="text-align: center; font-weight: 800"><%= email.object %>
+		  	 <div id="button">
+		  	 <%= link_to "Open", email, method: :get, remote: true, class: "btn btn-success" %>
+		  	</div>
+		  </td> 
+	      <td id="email_body<%=email.id%>" style="text-align: center; display:none">
+			<h2><strong>Sujet du mail : <%= email.object %></strong></h2>
+			<br>Contenu  : <%= email.body %><br><br>
+	      	<%= link_to "Delete this email", email, method: :delete, remote: true, data: { confirm: 'Are you sure ?'}, class: "btn btn-danger" %>
+	      </td>
+	    </tr>
+	    <% end %>
+		</table>
+	  </div>
+	  
+	</div>
+
+

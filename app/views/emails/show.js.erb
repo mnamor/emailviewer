@@ -1,0 +1,17 @@
+$( document ).ready(function() {
+
+$("#email_object<%=@email.id%>").on("click", function () {
+	$("#email_body<%=@email.id%>").fadeIn(); // La partie contenu apparaît lors du clique sur le bouton
+	$("#email_object<%=@email.id%>").css({'background-color': '	#7FFF00'}); // On met le fond en vert quand on clique sur le bouton open
+	$("#email_object<%=@email.id%>").append("<p>email opened</p>"); // On ajoute ce texte lorsque l'on clique sur le bouton
+	$("#email_object<%=@email.id%>").css({'font-weight': '700'});
+	$("#email_object<%=@email.id%>").css({'color': '#FFF'});
+	
+	$("#email_object<%=@email.id%> #button").hide();	//on cache le bouton open
+	
+	
+}).click();
+
+
+
+});
